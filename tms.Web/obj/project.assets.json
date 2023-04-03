@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Web\\tms.Web.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\tms.Web.csproj",
       "projectName": "tms.Web",
-      "projectPath": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Web\\tms.Web.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\tms.Web.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Web\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

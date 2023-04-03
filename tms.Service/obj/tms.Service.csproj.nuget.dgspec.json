@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Service\\tms.Service.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Service\\tms.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Service\\tms.Service.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Service\\tms.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Service\\tms.Service.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Service\\tms.Service.csproj",
         "projectName": "tms.Service",
-        "projectPath": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Service\\tms.Service.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Service\\tms.Service.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Service\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

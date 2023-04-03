@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Entity\\tms.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Entity\\tms.Entity.csproj",
       "projectName": "tms.Entity",
-      "projectPath": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Entity\\tms.Entity.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Entity\\tms.Entity.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\tms\\tms\\tms.Entity\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
