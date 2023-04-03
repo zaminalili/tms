@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using tms.Data.Context;
 using tms.Data.Repositories.Abstract;
+using tms.Data.UnitOfWorks.Abstract;
+using tms.Data.UnitOfWorks.Concrete;
 
 namespace tms.Data.Extensions
 {
@@ -13,6 +15,7 @@ namespace tms.Data.Extensions
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped(typeof(IRepository<>), typeof(IRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
         }
