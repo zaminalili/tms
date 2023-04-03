@@ -1,0 +1,12 @@
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Service.deps.json
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Service.dll
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Service.pdb
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.dll
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\refint\tms.Service.dll
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.pdb
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\ref\tms.Service.dll

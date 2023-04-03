@@ -1,12 +1,16 @@
-﻿namespace tms.Entity.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace tms.Entity.Entities
 {
     public class Product: EntityBase
     {
         // Columns
         public string Name { get; set; }
+        [NotMapped]
         public Dictionary<string, string> About { get; set; }
         public string Code { get; set; }
         public string Brend { get; set; }
+        [NotMapped]
         public Dictionary<string, string> Country { get; set; }
         public int? Price { get; set; }
         public int ViewCount { get; set; } = 0;
