@@ -6,12 +6,15 @@ namespace tms.Entity.Entities
     {
         // Columns
         public string Name { get; set; }
-        [NotMapped]
-        public Dictionary<string, string> About { get; set; }
+        
+        public string About_AZ { get; set; }
+        public string About_EN { get; set; }
+        public string About_RU { get; set; }
         public string Code { get; set; }
         public string Brend { get; set; }
-        [NotMapped]
-        public Dictionary<string, string> Country { get; set; }
+        public string Country_AZ { get; set; }
+        public string Country_EN { get; set; }
+        public string Country_RU { get; set; }
         public int? Price { get; set; }
         public int ViewCount { get; set; } = 0;
 
