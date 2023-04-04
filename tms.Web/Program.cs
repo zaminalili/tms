@@ -1,4 +1,5 @@
 using tms.Data.Extensions;
+using tms.Service.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.LoadDataLayerExtensions(builder.Configuration);
+builder.Services.LoadServiceLayerExtension();
 
 var app = builder.Build();
 
