@@ -8,7 +8,8 @@ namespace tms.Service.AutoMapper.Categories
     {
         public CategoryProfile()
         {
-            CreateMap<CategoryDTO, Category>().ReverseMap();
+            CreateMap<CategoryDto, Category>().ReverseMap();
+            CreateMap<CategoryAddDto, Category>().ReverseMap();
         }
     }
 }

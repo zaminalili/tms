@@ -5,6 +5,12 @@ namespace tms.Service.Services.Abstract
 {
     public interface ICategoryService
     {
-        Task<List<CategoryDTO>> GetAllCategoriesAsync();
+        Task<List<CategoryDto>> GetAllCategoriesAsync();
+        Task<CategoryAddDto> GetCategoryByIdAsync(Guid id);
+        Task SafeDeleteCategoryAsync(Guid id);
+        Task DeleteCategoryAsync(Guid id);
+        Task CreateCategoryAsync(CategoryAddDto model);
+        Task UpdateCategoryAsync(CategoryAddDto model);
+
     }
 }
