@@ -1,9 +1,10 @@
-﻿using tms.Entity.Entities;
+﻿using tms.Entity.DTOs.CategoryDTOs;
+using tms.Entity.Entities;
 
 namespace tms.Service.Services.Abstract
 {
     public interface ICategoryService
     {
-        Task<List<Category>> GetAllCategoriesAsync();
+        Task<List<CategoryDTO>> GetAllCategoriesAsync();
     }
 }
