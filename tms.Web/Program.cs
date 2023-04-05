@@ -12,11 +12,30 @@ builder.Services.AddControllersWithViews();
 builder.Services.LoadDataLayerExtensions(builder.Configuration);
 builder.Services.LoadServiceLayerExtension();
 
+builder.Services.AddSession();
+
 builder.Services.AddIdentity<AppUser, AppRole>()
                                                 .AddRoleManager<RoleManager<AppRole>>()
                                                 .AddEntityFrameworkStores<AppDbContext>()
                                                 .AddDefaultTokenProviders();
 
+
+builder.Services.ConfigureApplicationCookie(config =>
+{
+    config.LoginPath = new PathString("/Admin/Auth/Login");
+    config.LogoutPath = new PathString("/Admin/Auth/Logout");
+    config.Cookie = new CookieBuilder
+    {
+        Name = "TMS",
+        HttpOnly = true,
+        SameSite = SameSiteMode.Strict,
+        SecurePolicy = CookieSecurePolicy.SameAsRequest
+    };
+
+    config.SlidingExpiration = true;
+    config.ExpireTimeSpan = TimeSpan.FromDays(1);
+    config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDeniedPath");
+});
 
 
 var app = builder.Build();
@@ -31,6 +50,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
