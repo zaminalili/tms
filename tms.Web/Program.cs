@@ -1,5 +1,8 @@
 using tms.Data.Extensions;
 using tms.Service.Extensions;
+using tms.Entity.Entities;
+using Microsoft.AspNetCore.Identity;
+using tms.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,13 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.LoadDataLayerExtensions(builder.Configuration);
 builder.Services.LoadServiceLayerExtension();
+
+builder.Services.AddIdentity<AppUser, AppRole>()
+                                                .AddRoleManager<RoleManager<AppRole>>()
+                                                .AddEntityFrameworkStores<AppDbContext>()
+                                                .AddDefaultTokenProviders();
+
+
 
 var app = builder.Build();
 
@@ -24,6 +34,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

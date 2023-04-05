@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using tms.Entity.Entities;
 
 namespace tms.Data.Context
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext: IdentityDbContext<AppUser, AppRole, Guid>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

@@ -10,3 +10,8 @@ C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.dll
 C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\refint\tms.Service.dll
 C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.pdb
 C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\ref\tms.Service.dll
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Data.dll
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Entity.dll
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Data.pdb
+C:\Users\User\Documents\GitHub\tms\tms.Service\bin\Debug\net7.0\tms.Entity.pdb
+C:\Users\User\Documents\GitHub\tms\tms.Service\obj\Debug\net7.0\tms.Service.csproj.CopyComplete
