@@ -33,7 +33,7 @@ builder.Services.ConfigureApplicationCookie(config =>
     };
 
     config.SlidingExpiration = true;
-    config.ExpireTimeSpan = TimeSpan.FromDays(1);
+    config.ExpireTimeSpan = TimeSpan.FromHours(1);
     config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDeniedPath");
 });
 
