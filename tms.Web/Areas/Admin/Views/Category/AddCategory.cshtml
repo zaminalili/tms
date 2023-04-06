@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Yeni kateqoriya";
+}
+@model CategoryAddDto
+
+<div class="pagetitle my-3">
+    <h1>Yeni Kateqoriya</h1>
+
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+
+        <div class="card">
+            <div class="card-body">
+
+                <!-- General Form Elements -->
+                <form asp-action="AddCategory" method="post">
+                    <div class="row my-3">
+                        <label asp-for="Name_Az" class="col-sm-2 col-form-label">Ad (Azərbaycan dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Name_Az" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="Name_Ru" class="col-sm-2 col-form-label">Ad (rus dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Name_Ru" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="Name_En" class="col-sm-2 col-form-label">Ad (ingilis dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Name_En" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Əlavə et</button>
+                        <a class="btn btn-link" asp-action="Index">Geri</a>
+                    </div>
+                </form><!-- End General Form Elements -->
+
+            </div>
+        </div>
+
+
+
+    </div>
+</section>

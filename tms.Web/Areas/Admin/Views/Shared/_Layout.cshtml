@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>@ViewBag.Title</title>
+    <title>@ViewData["Title"]</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -145,7 +145,7 @@
             </li><!-- End Products Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-register.html">
+                <a class="nav-link collapsed" asp-controller="Category" asp-action="Index">
                     <i class="bi bi-card-list"></i>
                     <span>Kateqoriya</span>
                 </a>

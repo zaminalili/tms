@@ -3,8 +3,8 @@
     public class CategoryAddDto
     {
         public Guid Id { get; set; }
-        public string NameAz { get; set; }
-        public string NameEn { get; set; }
-        public  string NameRu { get; set; }
+        public string Name_Az { get; set; }
+        public string Name_En { get; set; }
+        public  string Name_Ru { get; set; }
     }
 }

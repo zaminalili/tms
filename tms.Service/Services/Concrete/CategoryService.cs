@@ -32,11 +32,31 @@ namespace tms.Service.Services.Concrete
             return map;
         }
 
+        public async Task<List<CategoryDto>> GetAllDeletedCategoriesAsync()
+        {
+            var categories = await _unitOfWork.GetRepository<Category>().GetAllAsync(c => c.IsDeleted);
+            var map = _mapper.Map<List<CategoryDto>>(categories);
+
+            return map;
+        }
+
         public async Task SafeDeleteCategoryAsync(Guid id)
         {
             var category = await _unitOfWork.GetRepository<Category>().GetById(id);
 
             category.IsDeleted = true;
+            category.DeletedBy = "Admin";
+            category.DeletedDate = DateTime.Now;
+
+            await _unitOfWork.GetRepository<Category>().UpdateAsync(category);
+            await _unitOfWork.SaveAsync();
+        }
+
+        public async Task ChangeStatusCategoryAsync(Guid id)
+        {
+            var category = await _unitOfWork.GetRepository<Category>().GetById(id);
+
+            category.IsDeleted = false;
             category.DeletedBy = "Admin";
             category.DeletedDate = DateTime.Now;
 
@@ -56,9 +76,9 @@ namespace tms.Service.Services.Concrete
         {
             var category = new Category
             {
-                Name_AZ = model.NameAz,
-                Name_EN = model.NameEn,
-                Name_RU = model.NameRu,
+                Name_AZ = model.Name_Az,
+                Name_EN = model.Name_En,
+                Name_RU = model.Name_Ru,
                 CreatedBy = "Admin"
             };
 
@@ -70,11 +90,14 @@ namespace tms.Service.Services.Concrete
         {
             var category = await _unitOfWork.GetRepository<Category>().GetById(model.Id);
 
-            category.Name_AZ = model.NameAz;
-            category.Name_EN = model.NameEn;
-            category.Name_RU = model.NameRu;
+            category.Name_AZ = model.Name_Az;
+            category.Name_EN = model.Name_En;
+            category.Name_RU = model.Name_Ru;
             category.EditedBy = "Admin";
             category.EditedDate = DateTime.Now;
+
+            await _unitOfWork.GetRepository<Category>().UpdateAsync(category);
+            await _unitOfWork.SaveAsync();
         }
     }
 }

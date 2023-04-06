@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Kateqoriyalar";
+}
+@model List<CategoryDto>
+
+<div class="pagetitle my-3">
+    <h1>Kateqoriyalar</h1>
+
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+        <div class="my-3">
+            <a asp-action="AddCategory" class="btn btn-outline-primary">+ Yeni Kateqoriya</a>
+            <a asp-action="DeletedCategory" class="btn btn-outline-danger"> <i class="ri-delete-bin-2-line"></i> Silinmişlər</a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">Adı</th>
+                            <th scope="col">Yaradılıb</th>
+                            <th scope="col">Tarix</th>
+                            <th scope="col">Yenilənib</th>
+                            <th scope="col">Yenilənmə tarixi</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name_Az</td>
+                                <td>@item.CreatedBy</td>
+                                <td>@item.CreatedDate</td>
+                                <td>@item.EditedBy</td>
+                                <td>@item.EditedDate</td>
+                                <td>
+                                    <a asp-action="UpdateCategory" asp-route-id="@item.Id" class="btn btn-secondary btn-sm ri-edit-line"></a>
+                                    <a asp-action="RemoveCategory" asp-route-id="@item.Id" class="btn btn-danger btn-sm ri-delete-bin-7-line"></a>
+                                </td>
+                            </tr>
+                        }
+
+                        
+
+                    </tbody>
+                </table>
+                <!-- End Default Table  -->
+            </div>
+        </div>
+
+    </div>
+</section>
