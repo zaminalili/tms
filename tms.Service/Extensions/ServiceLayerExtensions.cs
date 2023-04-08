@@ -4,6 +4,7 @@ using System.Reflection;
 using tms.Service.Services;
 using tms.Service.Services.Abstract;
 using tms.Service.Services.Concrete;
+using Microsoft.AspNetCore.Http;
 
 namespace tms.Service.Extensions
 {
@@ -16,6 +17,7 @@ namespace tms.Service.Extensions
 
             services.AddAutoMapper(assembly);
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             return services;
         }

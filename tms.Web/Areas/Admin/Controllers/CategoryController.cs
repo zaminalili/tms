@@ -9,7 +9,7 @@ namespace tms.Web.Areas.Admin.Controllers
     [Authorize]
     public class CategoryController : Controller
     {
-        private readonly ICategoryService categoryService;
+        private readonly ICategoryService categoryService; 
         public CategoryController(ICategoryService categoryService)
         {
             this.categoryService = categoryService;

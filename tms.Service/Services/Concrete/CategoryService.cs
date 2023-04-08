@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
 using tms.Data.UnitOfWorks.Abstract;
 using tms.Entity.DTOs.CategoryDTOs;
 using tms.Entity.Entities;
+using tms.Service.Extensions;
 using tms.Service.Services.Abstract;
 
 namespace tms.Service.Services.Concrete
@@ -10,10 +13,15 @@ namespace tms.Service.Services.Concrete
     {
         private readonly IUnitOfWork _unitOfWork; 
         private readonly  IMapper _mapper;
-        public CategoryService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly string userEmail;
+        public CategoryService(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
+            this.httpContextAccessor = httpContextAccessor;
+            this.userEmail = httpContextAccessor.HttpContext.User.GetLoggidInUserEmail();
+
         }
 
         public async Task<List<CategoryDto>> GetAllCategoriesAsync()
@@ -45,7 +53,7 @@ namespace tms.Service.Services.Concrete
             var category = await _unitOfWork.GetRepository<Category>().GetById(id);
 
             category.IsDeleted = true;
-            category.DeletedBy = "Admin";
+            category.DeletedBy = userEmail;
             category.DeletedDate = DateTime.Now;
 
             await _unitOfWork.GetRepository<Category>().UpdateAsync(category);
@@ -57,7 +65,7 @@ namespace tms.Service.Services.Concrete
             var category = await _unitOfWork.GetRepository<Category>().GetById(id);
 
             category.IsDeleted = false;
-            category.DeletedBy = "Admin";
+            category.DeletedBy = userEmail;
             category.DeletedDate = DateTime.Now;
 
             await _unitOfWork.GetRepository<Category>().UpdateAsync(category);
@@ -79,7 +87,7 @@ namespace tms.Service.Services.Concrete
                 Name_AZ = model.Name_Az,
                 Name_EN = model.Name_En,
                 Name_RU = model.Name_Ru,
-                CreatedBy = "Admin"
+                CreatedBy = userEmail
             };
 
             await _unitOfWork.GetRepository<Category>().AddAsync(category);
@@ -93,7 +101,7 @@ namespace tms.Service.Services.Concrete
             category.Name_AZ = model.Name_Az;
             category.Name_EN = model.Name_En;
             category.Name_RU = model.Name_Ru;
-            category.EditedBy = "Admin";
+            category.EditedBy = userEmail;
             category.EditedDate = DateTime.Now;
 
             await _unitOfWork.GetRepository<Category>().UpdateAsync(category);
