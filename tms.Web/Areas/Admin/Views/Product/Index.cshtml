@@ -1,0 +1,12 @@
+﻿@model List<ProductDto>
+
+@foreach (var item in Model)
+{
+	@item.Name
+	<br />
+	@item.Code
+	<br />
+	@item.Category.Name_AZ
+	<br />
+	@item.Image.FileName
+}
