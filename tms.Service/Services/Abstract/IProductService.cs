@@ -8,11 +8,11 @@ namespace tms.Service.Services.Abstract
     {
         Task<List<ProductDto>> GetAllProductsAsync();
         Task<List<ProductDto>> GetAllDeletedProductsAsync();
-        Task<Product> GetProductByIdAsync(Guid id);
+        Task<ProductAddDto> GetProductByIdAsync(Guid id);
         Task SafeDeleteProductAsync(Guid id);
         Task ChangeStatusProductAsync(Guid id);
         Task DeleteProductAsync(Guid id);
-        Task CreateCategoryAsync(Product model);
-        Task UpdateCategoryAsync(Product model);
+        Task CreateProductAsync(ProductAddDto model, Guid imageId);
+        Task UpdateProductAsync(ProductAddDto model, Guid imageId);
     }
 }

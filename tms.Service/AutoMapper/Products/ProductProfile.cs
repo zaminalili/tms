@@ -9,6 +9,7 @@ namespace tms.Service.AutoMapper.Products
         public ProductProfile()
         {
             CreateMap<ProductDto, Product>().ReverseMap();
-        }
+            CreateMap<ProductAddDto, Product>().ReverseMap();
+		}
     }
 }

@@ -1593,6 +1593,62 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\Automatic Air Ventil.png",
+      "PackagePath": "staticwebassets\\images\\Automatic Air Ventil.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\Ball Valve pn16.png",
+      "PackagePath": "staticwebassets\\images\\Ball Valve pn16.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\Electrothermal Actuator.png",
+      "PackagePath": "staticwebassets\\images\\Electrothermal Actuator.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\Male Stopper Yellow.png",
+      "PackagePath": "staticwebassets\\images\\Male Stopper Yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\Manifold with valve.png",
+      "PackagePath": "staticwebassets\\images\\Manifold with valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\Selenoid gas valve.png",
+      "PackagePath": "staticwebassets\\images\\Selenoid gas valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\ball valve female.png",
+      "PackagePath": "staticwebassets\\images\\ball valve female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\ball valve male female.png",
+      "PackagePath": "staticwebassets\\images\\ball valve male female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\com-1.png",
+      "PackagePath": "staticwebassets\\images\\com-1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\gas valve with fittings t-handle.png",
+      "PackagePath": "staticwebassets\\images\\gas valve with fittings t-handle.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\mini ball valve female.png",
+      "PackagePath": "staticwebassets\\images\\mini ball valve female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\mini ball valve male.png",
+      "PackagePath": "staticwebassets\\images\\mini ball valve male.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\natural gas valve (full).png",
+      "PackagePath": "staticwebassets\\images\\natural gas valve (full).png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\upright check valve.png",
+      "PackagePath": "staticwebassets\\images\\upright check valve.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

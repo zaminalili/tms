@@ -5,6 +5,7 @@ using tms.Service.Services;
 using tms.Service.Services.Abstract;
 using tms.Service.Services.Concrete;
 using Microsoft.AspNetCore.Http;
+using tms.Service.Helpers;
 
 namespace tms.Service.Extensions
 {
@@ -19,6 +20,8 @@ namespace tms.Service.Extensions
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IImageHelper, ImageHelper>();
+            services.AddScoped<IImageService, ImageService>();
 
             return services;
         }
