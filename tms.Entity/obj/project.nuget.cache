@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NCsBY3nClfiZfQxReDk959ODh0JAGWsz0VCNCsxpAYW1wFtIgm5MPgyUP1mOGgiFVC50hcaaSnCj+vPqbD66jA==",
+  "dgSpecHash": "8MeFbi7XGTGWYY/W1zsut/69q0NMyNeA2fvbOASkyBoxdgb2Q3kIK5ySOH8j5l/se6vn4NsqO1J2Gnn4xwkZvg==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Entity\\tms.Entity.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.4\\microsoft.aspnetcore.cryptography.internal.7.0.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.4\\microsoft.aspnetcore.cryptography.keyderivation.7.0.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.4\\microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",

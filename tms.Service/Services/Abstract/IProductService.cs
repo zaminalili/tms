@@ -14,5 +14,9 @@ namespace tms.Service.Services.Abstract
         Task DeleteProductAsync(Guid id);
         Task CreateProductAsync(ProductAddDto model, Guid imageId);
         Task UpdateProductAsync(ProductAddDto model, Guid imageId);
+        Task<List<ProductPriceDto>> GetProductPricesAsync(int minValue = 0, int? maxValue = null, Guid? categoryId = null);
+        Task UpdateProductPriceAsync(int Unit, float Type, float Variation, Guid CategoryId);
+        Task ChangePriceViewAsync();
+        Task<bool> GetPriceViewStatus();
     }
 }

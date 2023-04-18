@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using tms.Entity.DTOs.PriceDtos;
 using tms.Entity.DTOs.ProductDtos;
 using tms.Entity.Entities;
 using tms.Service.Helpers;
@@ -91,18 +92,49 @@ namespace tms.Web.Areas.Admin.Controllers
             return View(products);
         }
 
-        public async Task<IActionResult> DeleteCategory(Guid id)
+        public async Task<IActionResult> DeleteProduct(Guid id)
         {
             await productService.DeleteProductAsync(id);
 
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> RestoreCategory(Guid id)
+        public async Task<IActionResult> RestoreProduct(Guid id)
         {
             await productService.ChangeStatusProductAsync(id);
 
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> ProductPrices(int minValue = 0, int? maxValue = null, Guid? categoryId = null)
+        {
+
+            var product = await productService.GetProductPricesAsync(minValue, maxValue, categoryId);
+            ViewBag.Categories = await categoryService.GetAllCategoriesAsync();
+
+            ViewBag.MinValue = minValue;
+            ViewBag.MaxValue = maxValue != null ? maxValue : 0;
+            ViewBag.CategoryId = categoryId;
+
+            ViewBag.IsPriceViewActive = await productService.GetPriceViewStatus();
+
+            return View(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdatePrice(int Unit, float Type, float Variation, Guid CategoryId)
+        {
+
+            await productService.UpdateProductPriceAsync(Unit, Type, Variation, CategoryId);
+
+            return RedirectToAction("ProductPrices");
+        }
+
+        public async Task<IActionResult> ChangePriceViewStatus()
+        {
+            await productService.ChangePriceViewAsync();
+
+            return RedirectToAction("ProductPrices");
         }
     }
 }

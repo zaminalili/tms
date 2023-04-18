@@ -10,6 +10,7 @@ namespace tms.Service.AutoMapper.Products
         {
             CreateMap<ProductDto, Product>().ReverseMap();
             CreateMap<ProductAddDto, Product>().ReverseMap();
-		}
+            CreateMap<ProductPriceDto, Product>().ReverseMap();
+        }
     }
 }

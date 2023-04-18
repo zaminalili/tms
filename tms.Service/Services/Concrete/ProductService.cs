@@ -150,5 +150,106 @@ namespace tms.Service.Services.Concrete
             await unitOfWork.GetRepository<Product>().UpdateAsync(product);
             await unitOfWork.SaveAsync();
         }
+
+        public async Task<List<ProductPriceDto>> GetProductPricesAsync(int minValue = 0, int? maxValue = null, Guid? categoryId = null)
+        {
+            if(maxValue != null && categoryId != null)
+            {
+                var products = await unitOfWork.GetRepository<Product>().GetAllAsync(p => !p.IsDeleted && (p.Price > minValue && p.Price <= maxValue) && p.CategoryId == categoryId, p => p.Category);
+                var map = mapper.Map<List<ProductPriceDto>>(products);
+                return map;
+            }
+            else if(maxValue == null && categoryId != null)
+            {
+                var products = await unitOfWork.GetRepository<Product>().GetAllAsync(p => !p.IsDeleted && p.CategoryId == categoryId, p => p.Category);
+                var map = mapper.Map<List<ProductPriceDto>>(products);
+                return map;
+            }
+            else if(maxValue != null && categoryId == null) 
+            { 
+                var products = await unitOfWork.GetRepository<Product>().GetAllAsync(p => !p.IsDeleted && (p.Price > minValue && p.Price <= maxValue), p => p.Category);
+                var map = mapper.Map<List<ProductPriceDto>>(products);
+                return map;
+
+            }
+            else
+            {
+                var products = await unitOfWork.GetRepository<Product>().GetAllAsync(p => !p.IsDeleted && p.Price >= minValue, p => p.Category);
+                var map = mapper.Map<List<ProductPriceDto>>(products);
+                return map;
+            }
+
+        }
+
+        public async Task UpdateProductPriceAsync(int Unit, float Type, float Variation, Guid CategoryId)
+        {
+            var products = await unitOfWork.GetRepository<Product>().GetAllAsync(p => !p.IsDeleted && p.CategoryId == CategoryId);
+
+            if(Unit > 0)
+            {
+                foreach (var item in products)
+                {
+                    if (Type == 0)
+                    {
+                        if (Variation == 0)
+                        {
+                            item.Price = item.Price + (item.Price * Unit / 100);
+                        }
+                        else
+                        {
+                            item.Price = item.Price - (item.Price * Unit / 100);
+                        }
+                    }
+                    else if (Type == 1)
+                    {
+                        if (Variation == 0)
+                        {
+                            item.Price = item.Price + Unit;
+                        }
+                        else
+                        {
+                            item.Price = item.Price - Unit;
+                        }
+                    }
+                    else if (Type == 2)
+                    {
+                        if (Variation == 0)
+                        {
+                            item.Price = item.Price * Unit;
+                        }
+                        else
+                        {
+                            item.Price = item.Price / Unit;
+                        }
+                    }
+
+                    await unitOfWork.GetRepository<Product>().UpdateAsync(item);
+                    await unitOfWork.SaveAsync();
+                }
+            }
+
+            
+        }
+
+        public async Task ChangePriceViewAsync()
+        {
+            var priceView = await unitOfWork.GetRepository<PriceView>().GetAsync(p => !p.IsDeleted);
+
+            if (priceView.IsPriceViewActive == true)
+                priceView.IsPriceViewActive = false;
+            else
+                priceView.IsPriceViewActive = true;
+
+            await unitOfWork.GetRepository<PriceView>().UpdateAsync(priceView);
+            await unitOfWork.SaveAsync();
+        }
+
+        public async Task<bool> GetPriceViewStatus()
+        {
+            var priceView = await unitOfWork.GetRepository<PriceView>().GetAsync(p => !p.IsDeleted);
+            //var priceView = await unitOfWork.GetRepository<PriceView>().GetById(;
+
+            return priceView.IsPriceViewActive;
+        }
     }
 }
