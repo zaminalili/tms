@@ -3,11 +3,40 @@ using tms.Service.Extensions;
 using tms.Entity.Entities;
 using Microsoft.AspNetCore.Identity;
 using tms.Data.Context;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
+
+builder.Services.AddMvc().AddMvcLocalization();
+
+builder.Services.Configure<RequestLocalizationOptions>(opt =>
+{
+    var supportedCultures = new List<CultureInfo>
+    {
+        new CultureInfo("az"),
+        new CultureInfo("en"),
+        new CultureInfo("ru")
+    };
+
+    opt.DefaultRequestCulture = new RequestCulture("az");
+    opt.SupportedCultures = supportedCultures;
+    opt.SupportedUICultures = supportedCultures;
+
+    opt.RequestCultureProviders = new List<IRequestCultureProvider>
+    {
+        new QueryStringRequestCultureProvider(),
+        new CookieRequestCultureProvider(),
+        new AcceptLanguageHeaderRequestCultureProvider()
+    };
+});
+
 
 builder.Services.LoadDataLayerExtensions(builder.Configuration);
 builder.Services.LoadServiceLayerExtension();
@@ -57,6 +86,9 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+var options = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(options.Value);
 
 app.UseEndpoints(endpoints =>
 {
