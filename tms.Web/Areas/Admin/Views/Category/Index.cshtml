@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Kateqoriyalar";
 }
-@model List<CategoryDto>
+@model List<Category>
 
 <div class="pagetitle my-3">
     <h1>Kateqoriyalar</h1>
@@ -35,7 +35,21 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Name_Az</td>
+                                <td>
+                                    @if(item.SubofSubname_AZ != null)
+                                    {
+                                        @item.SubofSubname_AZ
+                                    }
+                                    else if(item.Subname_AZ != null)
+                                    {
+                                        @item.Subname_AZ
+                                    }
+                                    else
+                                    {
+                                        @item.Name_AZ
+                                    }
+
+                                </td>
                                 <td>@item.CreatedBy</td>
                                 <td>@item.CreatedDate</td>
                                 <td>@item.EditedBy</td>

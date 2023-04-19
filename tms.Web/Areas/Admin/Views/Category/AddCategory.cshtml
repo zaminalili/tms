@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Yeni kateqoriya";
 }
-@model CategoryAddDto
+@model Category
 
 <div class="pagetitle my-3">
     <h1>Yeni Kateqoriya</h1>
@@ -17,23 +17,65 @@
                 <!-- General Form Elements -->
                 <form asp-action="AddCategory" method="post">
                     <div class="row my-3">
-                        <label asp-for="Name_Az" class="col-sm-2 col-form-label">Ad (Azərbaycan dili)</label>
+                        <label asp-for="Name_AZ" class="col-sm-2 col-form-label">Əsas kateqoriya (Azərbaycan dili)</label>
                         <div class="col-sm-10">
-                            <input asp-for="Name_Az" type="text" class="form-control" required>
+                            <input asp-for="Name_AZ" type="text" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="row my-3">
-                        <label asp-for="Name_Ru" class="col-sm-2 col-form-label">Ad (rus dili)</label>
+                        <label asp-for="Name_RU" class="col-sm-2 col-form-label">Əsas kateqoriya (rus dili)</label>
                         <div class="col-sm-10">
-                            <input asp-for="Name_Ru" type="text" class="form-control" required>
+                            <input asp-for="Name_RU" type="text" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="row my-3">
-                        <label asp-for="Name_En" class="col-sm-2 col-form-label">Ad (ingilis dili)</label>
+                        <label asp-for="Name_EN" class="col-sm-2 col-form-label">Əsas kateqoriya (ingilis dili)</label>
                         <div class="col-sm-10">
-                            <input asp-for="Name_En" type="text" class="form-control" required>
+                            <input asp-for="Name_EN" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="Subname_AZ" class="col-sm-2 col-form-label">Üst kateqoriya (Azərbaycan dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Subname_AZ" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="Subname_RU" class="col-sm-2 col-form-label">Üst kateqoriya (rus dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Subname_RU" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="Subname_EN" class="col-sm-2 col-form-label">Üst kateqoriya (ingilis dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Subname_EN" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="SubofSubname_AZ" class="col-sm-2 col-form-label">Alt kateqoriya (Azərbaycan dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="SubofSubname_AZ" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="SubofSubname_RU" class="col-sm-2 col-form-label">Alt kateqoriya (rus dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="SubofSubname_RU" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <label asp-for="SubofSubname_EN" class="col-sm-2 col-form-label">Alt kateqoriya (ingilis dili)</label>
+                        <div class="col-sm-10">
+                            <input asp-for="SubofSubname_EN" type="text" class="form-control" required>
                         </div>
                     </div>
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using tms.Entity.DTOs.CategoryDTOs;
+using tms.Entity.Entities;
 using tms.Service.Services.Abstract;
 
 namespace tms.Web.Areas.Admin.Controllers
@@ -29,7 +30,7 @@ namespace tms.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCategory(CategoryAddDto category)
+        public async Task<IActionResult> AddCategory(Category category)
         {
             await categoryService.CreateCategoryAsync(category);
 
@@ -66,7 +67,7 @@ namespace tms.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateCategory(CategoryAddDto category)
+        public async Task<IActionResult> UpdateCategory(Category category)
         {
             await categoryService.UpdateCategoryAsync(category);
 

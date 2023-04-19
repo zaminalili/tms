@@ -24,20 +24,14 @@ namespace tms.Service.Services.Concrete
 
         }
 
-        public async Task<List<CategoryDto>> GetAllCategoriesAsync()
+        public async Task<List<Category>> GetAllCategoriesAsync()
         {
-            var categories = await _unitOfWork.GetRepository<Category>().GetAllAsync(c => !c.IsDeleted);
-            var map = _mapper.Map<List<CategoryDto>>(categories);
-
-            return map;
+            return await _unitOfWork.GetRepository<Category>().GetAllAsync(c => !c.IsDeleted);
         }
 
-        public async Task<CategoryAddDto> GetCategoryByIdAsync(Guid id)
+        public async Task<Category> GetCategoryByIdAsync(Guid id)
         {
-            var category = await _unitOfWork.GetRepository<Category>().GetById(id);
-            var map = _mapper.Map<CategoryAddDto>(category);
-
-            return map;
+            return await _unitOfWork.GetRepository<Category>().GetById(id);
         }
 
         public async Task<List<CategoryDto>> GetAllDeletedCategoriesAsync()
@@ -80,27 +74,32 @@ namespace tms.Service.Services.Concrete
            await _unitOfWork.SaveAsync();
         }
 
-        public async Task CreateCategoryAsync(CategoryAddDto model)
+        public async Task CreateCategoryAsync(Category model)
         {
-            var category = new Category
-            {
-                Name_AZ = model.Name_Az,
-                Name_EN = model.Name_En,
-                Name_RU = model.Name_Ru,
-                CreatedBy = userEmail
-            };
 
-            await _unitOfWork.GetRepository<Category>().AddAsync(category);
+            model.CreatedBy = userEmail;
+         
+
+            await _unitOfWork.GetRepository<Category>().AddAsync(model);
             await _unitOfWork.SaveAsync();
         }
 
-        public async Task UpdateCategoryAsync(CategoryAddDto model)
+        public async Task UpdateCategoryAsync(Category model)
         {
             var category = await _unitOfWork.GetRepository<Category>().GetById(model.Id);
 
-            category.Name_AZ = model.Name_Az;
-            category.Name_EN = model.Name_En;
-            category.Name_RU = model.Name_Ru;
+            category.Name_AZ = model.Name_AZ;
+            category.Name_EN = model.Name_EN;
+            category.Name_RU = model.Name_RU;
+
+            category.Subname_AZ = model.Subname_AZ;
+            category.Subname_EN = model.Subname_EN;
+            category.Subname_RU = model.Subname_RU;
+
+            category.SubofSubname_AZ = model.SubofSubname_AZ;
+            category.SubofSubname_EN = model.SubofSubname_EN;
+            category.SubofSubname_RU = model.SubofSubname_RU;
+
             category.EditedBy = userEmail;
             category.EditedDate = DateTime.Now;
 
