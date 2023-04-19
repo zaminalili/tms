@@ -291,3 +291,13 @@ C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\Microsoft.Extensions
 C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\tms.Service.dll
 C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\tms.Service.pdb
+C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\az\tms.Web.resources.dll
+C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\en\tms.Web.resources.dll
+C:\Users\User\Documents\GitHub\tms\tms.Web\bin\Debug\net7.0\ru\tms.Web.resources.dll
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\az\tms.Web.resources.dll
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\en\tms.Web.resources.dll
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\ru\tms.Web.resources.dll
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Shared._Layout.az.resources
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Shared._Layout.en.resources
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Shared._Layout.ru.resources

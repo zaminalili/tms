@@ -1,0 +1,80 @@
+.footer__widget__social a{
+    padding: 5px;
+    color: black;
+}
+
+.footer__widget__social a:hover{
+    color: rgba(0, 0, 0, 0.815);
+}
+
+.featured__item__pic__hover {
+    bottom: -120px;
+    background-color: white;
+    opacity: 0.8;
+}
+
+footer ul li{
+    list-style-type: none;
+}
+
+footer ul li a{
+    color: black;
+}
+
+footer a:hover{
+    color: black;
+    text-decoration: underline !important;
+}
+
+#btn-wp{
+  position: fixed;
+  bottom: 72px;
+  right: 25px;
+  font-size: 50px;
+  z-index: 9999;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    /* position: absolute; */
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    padding: 0 10px;
+    /* background-color: blue; */
+  }
+  
+  .dropdown-submenu-content {
+    display: none;
+    /* position: absolute; */
+    top: 0;
+    left: 100%;
+    z-index: 1;
+    padding: 0 10px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-submenu:hover .dropdown-submenu-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    display: block;
+  }
+  
+  .dropdown-submenu-content a {
+    display: block;
+    white-space: nowrap;
+  }
+  
+  .dropdown a:hover{
+    opacity: 0.8;
+  }

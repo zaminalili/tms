@@ -15,6 +15,8 @@ namespace tms.Web.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.IsHomePage = true;
+
             return View();
         }
 

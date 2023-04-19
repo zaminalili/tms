@@ -1585,8 +1585,44 @@
       "PackagePath": "staticwebassets\\assets\\vendor\\tinymce\\tinymce.min.js"
     },
     {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\elegant-icons.css",
+      "PackagePath": "staticwebassets\\css\\elegant-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\css\\jquery-ui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\css\\nice-select.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\css\\slicknav.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\favicon.ico",
@@ -1647,6 +1683,190 @@
     {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\upright check valve.png",
       "PackagePath": "staticwebassets\\images\\upright check valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Automatic Air Ventil.png",
+      "PackagePath": "staticwebassets\\img\\Automatic Air Ventil.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Ball Valve fittings.png",
+      "PackagePath": "staticwebassets\\img\\Ball Valve fittings.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Ball Valve pn16.png",
+      "PackagePath": "staticwebassets\\img\\Ball Valve pn16.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Electrothermal Actuator.png",
+      "PackagePath": "staticwebassets\\img\\Electrothermal Actuator.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Male Stopper Yellow.png",
+      "PackagePath": "staticwebassets\\img\\Male Stopper Yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Manifold clamps.png",
+      "PackagePath": "staticwebassets\\img\\Manifold clamps.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Manifold with valve.png",
+      "PackagePath": "staticwebassets\\img\\Manifold with valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Nipple.png",
+      "PackagePath": "staticwebassets\\img\\Nipple.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Relief Valve for manifold.png",
+      "PackagePath": "staticwebassets\\img\\Relief Valve for manifold.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Selenoid gas valve.png",
+      "PackagePath": "staticwebassets\\img\\Selenoid gas valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Straight Radiator.png",
+      "PackagePath": "staticwebassets\\img\\Straight Radiator.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\TMS.png",
+      "PackagePath": "staticwebassets\\img\\TMS.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Tee female.png",
+      "PackagePath": "staticwebassets\\img\\Tee female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Untitled design (22).png",
+      "PackagePath": "staticwebassets\\img\\Untitled design (22).png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Untitled design (23).png",
+      "PackagePath": "staticwebassets\\img\\Untitled design (23).png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\Valve with actuator connection fitting.png",
+      "PackagePath": "staticwebassets\\img\\Valve with actuator connection fitting.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\ball valve male female.png",
+      "PackagePath": "staticwebassets\\img\\ball valve male female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\ball-valve-female.png",
+      "PackagePath": "staticwebassets\\img\\ball-valve-female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\banner.jpg",
+      "PackagePath": "staticwebassets\\img\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\categories\\cat-1.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\cat-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\categories\\cat-2.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\cat-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\categories\\cat-3.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\cat-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\categories\\cat-4.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\cat-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\categories\\cat-5.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\cat-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\corner radiator valve.png",
+      "PackagePath": "staticwebassets\\img\\corner radiator valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\dak tak.png",
+      "PackagePath": "staticwebassets\\img\\dak tak.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\gas valve with fittings t-handle.png",
+      "PackagePath": "staticwebassets\\img\\gas valve with fittings t-handle.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\mini ball valve female.png",
+      "PackagePath": "staticwebassets\\img\\mini ball valve female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\mini ball valve male.png",
+      "PackagePath": "staticwebassets\\img\\mini ball valve male.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\natural gas valve (full).png",
+      "PackagePath": "staticwebassets\\img\\natural gas valve (full).png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\natural gas valve male-female.png",
+      "PackagePath": "staticwebassets\\img\\natural gas valve male-female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\natural valve female.png",
+      "PackagePath": "staticwebassets\\img\\natural valve female.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\radiator.jpg",
+      "PackagePath": "staticwebassets\\img\\radiator.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\swing checkvalve.png",
+      "PackagePath": "staticwebassets\\img\\swing checkvalve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\tmslogo.png",
+      "PackagePath": "staticwebassets\\img\\tmslogo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\upright check valve.png",
+      "PackagePath": "staticwebassets\\img\\upright check valve.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\img\\y strainer.png",
+      "PackagePath": "staticwebassets\\img\\y strainer.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\jquery.slicknav.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slicknav.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\mixitup.min.js",
+      "PackagePath": "staticwebassets\\js\\mixitup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
     },
     {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\js\\site.js",

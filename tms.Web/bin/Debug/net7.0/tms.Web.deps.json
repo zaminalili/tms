@@ -16,6 +16,17 @@
         },
         "runtime": {
           "tms.Web.dll": {}
+        },
+        "resources": {
+          "az/tms.Web.resources.dll": {
+            "locale": "az"
+          },
+          "en/tms.Web.resources.dll": {
+            "locale": "en"
+          },
+          "ru/tms.Web.resources.dll": {
+            "locale": "ru"
+          }
         }
       },
       "AutoMapper/12.0.1": {
