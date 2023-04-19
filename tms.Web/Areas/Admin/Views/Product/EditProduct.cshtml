@@ -90,7 +90,13 @@
                 <select asp-for="CategoryId" class="form-select form-select-sm" aria-label=".form-select-sm example">
                     @foreach (var item in @ViewBag.Categories)
                     {
-                        <option value="@item.Id">@item.Name_Az</option>
+                        <option value="@item.Id">
+                            @item.Subname_AZ 
+                            @if(item.SubofSubname_AZ != null)
+                            {
+                                <span>- @item.SubofSubname_AZ</span>
+                            }
+                        </option>
                     }
 
                 </select>

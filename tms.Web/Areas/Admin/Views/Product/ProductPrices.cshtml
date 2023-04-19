@@ -76,7 +76,13 @@
                         <select name="CategoryId" class="form-select form-select-sm m-2 w-25" aria-label=".form-select-sm example">
                             @foreach (var item in ViewBag.Categories)
                             {
-                                <option value="@item.Id">@item.Name_Az</option>
+                                <option value="@item.Id">
+                                    @item.Subname_AZ
+                                    @if (item.SubofSubname_AZ != null)
+                                    {
+                                        <span>- @item.SubofSubname_AZ</span>
+                                    }
+                                </option>
                             }
                             
                           
@@ -112,11 +118,23 @@
             {
                 @if (item.Id == ViewBag.CategoryId)
                 {
-                    <option value="@item.Id" selected >@item.Name_Az</option>
+                    <option value="@item.Id" selected >
+                        @item.Subname_AZ
+                        @if (item.SubofSubname_AZ != null)
+                        {
+                            <span>- @item.SubofSubname_AZ</span>
+                        }
+                    </option>
                 }
                 else
                 {
-                    <option value="@item.Id">@item.Name_Az</option>
+                    <option value="@item.Id">
+                        @item.Subname_AZ
+                        @if (item.SubofSubname_AZ != null)
+                        {
+                            <span>- @item.SubofSubname_AZ</span>
+                        }
+                    </option>
                 }
                 
             }
@@ -157,7 +175,13 @@
                             <td>@item.Name</td>
                             <td>@item.Code</td>
                             <td>@item.Price &#8380;</td>
-                            <td>@item.Category.Name_AZ</td>
+                            <td>
+                                @item.Category.Subname_AZ
+                                @if (item.Category.SubofSubname_AZ != null)
+                                {
+                                    <span>- @item.Category.SubofSubname_AZ</span>
+                                }
+                            </td>
 
                         </tr>
                     }
