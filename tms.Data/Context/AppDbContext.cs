@@ -14,6 +14,8 @@ namespace tms.Data.Context
         DbSet<Image> Images { get; set; }
         DbSet<Offer> Offers { get; set; }
         DbSet<PriceView> PriceViews { get; set; }
+        DbSet<About> Abouts { get; set; }
+        DbSet<Brend> Brends { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

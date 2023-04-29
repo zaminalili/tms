@@ -8,5 +8,6 @@
         // Relations
         public ICollection<Product> Products { get; set; }
         public ICollection<Offer> Offers { get; set; }
+        public ICollection<Brend> Brends { get; set; }
     }
 }
