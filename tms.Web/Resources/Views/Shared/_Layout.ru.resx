@@ -123,6 +123,9 @@
   <data name="Adress" xml:space="preserve">
     <value>Зия Буньядов, Баку</value>
   </data>
+  <data name="Air_conditioning_equipment" xml:space="preserve">
+    <value>Климатическая техника</value>
+  </data>
   <data name="Brands" xml:space="preserve">
     <value>Бренды</value>
   </data>
@@ -144,7 +147,25 @@
   <data name="Phone" xml:space="preserve">
     <value>Мобильный и WhatsApp</value>
   </data>
+  <data name="Pipes_fittings" xml:space="preserve">
+    <value>Трубы и арматура</value>
+  </data>
+  <data name="Pumps" xml:space="preserve">
+    <value>Насосы</value>
+  </data>
+  <data name="Radiators" xml:space="preserve">
+    <value>Радиаторы</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
   <data name="Top_String" xml:space="preserve">
     <value>Продажа систем отопления, охлаждения и вентиляции, отчёта и обслуживания инженеров.</value>
+  </data>
+  <data name="Ventilation" xml:space="preserve">
+    <value>Вентиляционная система</value>
+  </data>
+  <data name="Water_heaters" xml:space="preserve">
+    <value>Водонагреватели</value>
   </data>
 </root>

@@ -301,3 +301,6 @@ C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\ru\tms.Web.resources
 C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Shared._Layout.az.resources
 C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Shared._Layout.en.resources
 C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Shared._Layout.ru.resources
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Home.Index.az.resources
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Home.Index.en.resources
+C:\Users\User\Documents\GitHub\tms\tms.Web\obj\Debug\net7.0\tms.Web.Resources.Views.Home.Index.ru.resources

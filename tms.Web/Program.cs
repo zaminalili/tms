@@ -1,4 +1,4 @@
-using tms.Data.Extensions;
+﻿using tms.Data.Extensions;
 using tms.Service.Extensions;
 using tms.Entity.Entities;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
 
@@ -47,6 +48,16 @@ builder.Services.AddIdentity<AppUser, AppRole>()
                                                 .AddRoleManager<RoleManager<AppRole>>()
                                                 .AddEntityFrameworkStores<AppDbContext>()
                                                 .AddDefaultTokenProviders();
+
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(1); // Oturumun 30 dakika boyunca açık kalmasını sağla
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 
 
 builder.Services.ConfigureApplicationCookie(config =>

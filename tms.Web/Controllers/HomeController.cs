@@ -1,34 +1,62 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System.Diagnostics;
+using System.Globalization;
+using tms.Service.Services.Abstract;
 using tms.Web.Models;
 
 namespace tms.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ICategoryService categoryService;
+        private readonly IProductService productService;
+		private readonly IHttpContextAccessor httpContextAccessor;
+		private readonly IStringLocalizer<HomeController> localizer;
 
-        public HomeController(ILogger<HomeController> logger)
+		public HomeController(ICategoryService categoryService, IProductService productService, IHttpContextAccessor httpContextAccessor, IStringLocalizer<HomeController> localizer)
         {
-            _logger = logger;
-        }
+            this.categoryService = categoryService;
+            this.productService = productService;
+			this.httpContextAccessor = httpContextAccessor;
+			this.localizer = localizer;
+		}
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(Guid? categoryId, int currentPage = 1, int pageSize = 24, bool isAscending = false)
         {
             ViewBag.IsHomePage = true;
+            ViewBag.Categories = await categoryService.GetAllCategoriesAsync();
 
-            return View();
+			string currentCulture = CultureInfo.CurrentCulture.Name;
+
+            ViewBag.CurrentLang = currentCulture;
+
+			var products = await productService.GetProductsByPagingAsync(categoryId, currentPage, pageSize, isAscending);
+
+            return View(products);
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Search(string keyword, Guid? categoryId, int currentPage = 1, int pageSize = 24, bool isAscending = false)
         {
-            return View();
+            ViewBag.IsHomePage = false;
+            ViewBag.Categories = await categoryService.GetAllCategoriesAsync();
+
+            var products = await productService.SearchAsync(keyword, categoryId, currentPage, pageSize, isAscending);
+
+            return View(products);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult ChangeLanguage(string culture, string returnUrl)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            httpContextAccessor.HttpContext.Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            return LocalRedirect(returnUrl);
         }
     }
 }

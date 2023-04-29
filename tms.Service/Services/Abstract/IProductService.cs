@@ -18,5 +18,9 @@ namespace tms.Service.Services.Abstract
         Task UpdateProductPriceAsync(int Unit, float Type, float Variation, Guid CategoryId);
         Task ChangePriceViewAsync();
         Task<bool> GetPriceViewStatus();
+        Task<ProductListDto> GetProductsByPagingAsync(Guid? categoryId, int currentPage = 1, int pageSize = 24, bool isAscending = false);
+        Task<ProductListDto> SearchAsync(string keyword, Guid? categoryId, int currentPage = 1, int pageSize = 18, bool isAscending = false);
+        Task<Product> GetProductAsync(Guid id);
+        Task<ProductListDto> GetProductsByCategoryNameAsync(string categoryName, Guid? categoryId, int currentPage = 1, int pageSize = 18, bool isAscending = false);
     }
 }

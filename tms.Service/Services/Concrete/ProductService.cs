@@ -103,6 +103,11 @@ namespace tms.Service.Services.Concrete
             return map;
         }
 
+        public async Task<Product> GetProductAsync(Guid id)
+        {
+            return await unitOfWork.GetRepository<Product>().GetAsync(p => p.Id == id && !p.IsDeleted, p => p.Category, p => p.Image);
+        }
+
         public async Task SafeDeleteProductAsync(Guid id)
         {
             var product = await unitOfWork.GetRepository<Product>().GetById(id);
@@ -250,6 +255,91 @@ namespace tms.Service.Services.Concrete
             //var priceView = await unitOfWork.GetRepository<PriceView>().GetById(;
 
             return priceView.IsPriceViewActive;
+        }
+
+        public async Task<ProductListDto> GetProductsByPagingAsync(Guid? categoryId, int currentPage = 1, int pageSize = 18, bool isAscending = false)
+        {
+            pageSize = pageSize > 20 ? 20 : pageSize;
+
+            var products = categoryId == null
+                ? await unitOfWork.GetRepository<Product>().GetAllAsync(a => !a.IsDeleted, a => a.Image)
+                : await unitOfWork.GetRepository<Product>().GetAllAsync(a => a.CategoryId == categoryId && !a.IsDeleted, a => a.Image);
+
+            //var mappedProducts = mapper.Map<List<ProductDto>>(products);
+
+            var sortedProducts = isAscending
+                ? products.OrderBy(x => x.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+                : products.OrderByDescending(x => x.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+            
+
+            return new ProductListDto
+            {
+                Products = sortedProducts,
+                CategoryId = categoryId == null ? null : categoryId.Value,
+                CurrentPage = currentPage,
+                PageSize = pageSize,
+                TotalCount = products.Count,
+                IsAscending = isAscending
+            };
+        }
+
+        public async Task<ProductListDto> SearchAsync(string keyword, Guid? categoryId, int currentPage = 1, int pageSize = 18, bool isAscending = false)
+        {
+            pageSize = pageSize > 20 ? 20 : pageSize;
+
+            var products = categoryId == null
+                ? await unitOfWork.GetRepository<Product>().GetAllAsync(a => !a.IsDeleted && (a.Name == keyword || a.Category.Name_AZ == keyword || a.Category.Name_EN == keyword || a.Category.Name_RU == keyword), a => a.Image)
+                : await unitOfWork.GetRepository<Product>().GetAllAsync(a => a.CategoryId == categoryId && !a.IsDeleted && (a.Name == keyword || a.Category.Name_AZ == keyword || a.Category.Name_EN == keyword || a.Category.Name_RU == keyword), a => a.Image);
+
+            //var mappedProducts = mapper.Map<List<ProductDto>>(products);
+
+            var sortedProducts = isAscending
+                ? products.OrderBy(x => x.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+                : products.OrderByDescending(x => x.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+
+
+            return new ProductListDto
+            {
+                Products = sortedProducts,
+                CategoryId = categoryId == null ? null : categoryId.Value,
+                CurrentPage = currentPage,
+                PageSize = pageSize,
+                TotalCount = products.Count,
+                IsAscending = isAscending
+            };
+        }
+
+        public async Task<ProductListDto> GetProductsByCategoryNameAsync(string categoryName, Guid? categoryId, int currentPage = 1, int pageSize = 18, bool isAscending = false)
+        {
+             
+
+            pageSize = pageSize > 20 ? 20 : pageSize;
+
+            var products = await unitOfWork.GetRepository<Product>()
+                .GetAllAsync(p => !p.IsDeleted &&
+                    (p.Category.Name_EN == categoryName || p.Category.Subname_EN == categoryName || p.Category.SubofSubname_EN == categoryName),
+                    p => p.Category, p => p.Image
+                );
+
+            //var mappedProducts = mapper.Map<List<ProductDto>>(products);
+
+            var sortedProducts = isAscending
+                ? products.OrderBy(x => x.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+                : products.OrderByDescending(x => x.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+
+
+            return new ProductListDto
+            {
+                Products = sortedProducts,
+                CategoryId = categoryId == null ? null : categoryId.Value,
+                CurrentPage = currentPage,
+                PageSize = pageSize,
+                TotalCount = products.Count,
+                IsAscending = isAscending
+            };
         }
     }
 }

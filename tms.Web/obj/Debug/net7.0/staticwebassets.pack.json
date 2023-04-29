@@ -1589,8 +1589,8 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\custom.css",
-      "PackagePath": "staticwebassets\\css\\custom.css"
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\cstm.css",
+      "PackagePath": "staticwebassets\\css\\cstm.css"
     },
     {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\elegant-icons.css",

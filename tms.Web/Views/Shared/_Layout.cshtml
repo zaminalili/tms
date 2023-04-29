@@ -36,7 +36,15 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <link rel="stylesheet" href="css/custom.css" type="text/css">
+    <link rel="stylesheet" href="css/cstm.css" type="text/css">
+
+    <style>
+        .lang-button{
+            background: none;
+            border: none;
+            color: #fff;
+        }
+    </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/elegant-icons/style.min.css">
     <script nonce="31e94982-7bc7-4e8d-9155-0a648edecb2c">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
@@ -63,12 +71,37 @@
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
                 <img src="img/language.png" alt="">
-                <div>AZ</div>
+                @switch (ViewBag.CurrentLang)
+                {
+                    case "az":
+                        <div>AZ</div>
+                        break;
+                    case "en":
+                        <div>EN</div>
+                        break;
+                    case "ru":
+                        <div>RU</div>
+                        break;
+
+                }
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">EN</a></li>
-                    <li><a href="#">AZ</a></li>
-                    <li><a href="#">RU</a></li>
+                    <form asp-controller="Home" asp-action="ChangeLanguage" method="post">
+                        <input type="hidden" name="culture" value="az" />
+                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                        <button class="lang-button" type="submit">Azərbaycan</button>
+                    </form>
+                    <form asp-controller="Home" asp-action="ChangeLanguage" method="post">
+                        <input type="hidden" name="culture" value="en" />
+                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                        <button class="lang-button" type="submit">English</button>
+                    </form>
+                    <form asp-controller="Home" asp-action="ChangeLanguage" method="post">
+                        <input type="hidden" name="culture" value="ru" />
+                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                        <button class="lang-button" type="submit">Русский</button>
+                    </form>
+                    
                 </ul>
             </div>
 
@@ -118,13 +151,43 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="img/language.png" alt="">
-                                <div>AZ</div>
+
+                                @switch (ViewBag.CurrentLang)
+                                {
+                                    case "az":
+                                        <div>AZ</div>
+                                        break;
+                                    case "en":
+                                        <div>EN</div>
+                                        break;
+                                    case "ru":
+                                        <div>RU</div>
+                                        break;
+
+                                }
+
+                                
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">EN</a></li>
-                                    <li><a href="#">AZ</a></li>
-                                    <li><a href="#">RU</a></li>
+                                    <form asp-controller="Home" asp-action="ChangeLanguage" method="post">
+                                        <input type="hidden" name="culture" value="az" />
+                                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                        <button class="lang-button" type="submit">Azərbaycan</button>
+                                    </form>
+                                    <form asp-controller="Home" asp-action="ChangeLanguage" method="post">
+                                        <input type="hidden" name="culture" value="en" />
+                                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                        <button class="lang-button" type="submit">English</button>
+                                    </form>
+                                    <form asp-controller="Home" asp-action="ChangeLanguage" method="post">
+                                        <input type="hidden" name="culture" value="ru" />
+                                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                        <button class="lang-button" type="submit">Русский</button>
+                                    </form>
+                                    
                                 </ul>
+                                
+
                             </div>
 
                         </div>
@@ -136,7 +199,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/TMS.png" alt=""></a>
+                        <a asp-action="Index"><img src="img/TMS.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -177,22 +240,181 @@
                             <span>@localizer["Categories"]</span>
                         </div>
                         <ul>
+                                    <li>
+                                        <div class="dropdown">
+                                            <a asp-controller="Product" asp-action="GetProductsByCategory" asp-route-categoryname="Heaters">@localizer["Heaters"]</a>
+                                            <div class="dropdown-content">
+
+                                                <div class="dropdown-submenu">
+                                                    @foreach (var item in ViewBag.Categories)
+                                                    {
+                                                        @if (item.Name_EN == "Heaters")
+                                                        {
+                                                            <a asp-controller="Product" asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_EN">
+                                                                @item.Subname_AZ
+                                                            </a>
+                                                            
+                                                            <div class="dropdown-submenu-content">
+                                                                <a asp-controller="Product" asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_EN">@item.SubofSubname_AZ</a>
+                                                            </div>
+
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
                             <li>
                                 <div class="dropdown">
-                                    <a href="#">@localizer["Heaters"]</a>
+                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="Radiators">@localizer["Radiators"]</a>
                                     <div class="dropdown-content">
 
                                         <div class="dropdown-submenu">
-                                            <a href="#">Alt Menü Öğesi</a>
-                                            <div class="dropdown-submenu-content">
-                                                <a href="#">Alt Menüsünün Alt Menüsü</a>
-                                                <a href="#">Alt Menüsünün Alt Menüsü 2</a>
-                                            </div>
+                                            @foreach (var item in ViewBag.Categories)
+                                            {
+                                                @if (item.Name_EN == "Radiators")
+                                                {
+                                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_AZ">
+                                                        @item.Subname_AZ
+                                                    </a>
+
+                                                    <div class="dropdown-submenu-content">
+                                                        <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_AZ">@item.SubofSubname_AZ</a>
+                                                    </div>
+
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                                
+                            <li>
+                                <div class="dropdown">
+                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="Water heaters">@localizer["Water_heaters"]</a>
+                                    <div class="dropdown-content">
+
+                                        <div class="dropdown-submenu">
+                                            @foreach (var item in ViewBag.Categories)
+                                            {
+                                                @if (item.Name_EN == "Water heaters")
+                                                {
+                                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_AZ">
+                                                        @item.Subname_AZ
+                                                    </a>
+
+                                                    <div class="dropdown-submenu-content">
+                                                        <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_AZ">@item.SubofSubname_AZ</a>
+                                                    </div>
+
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+ 
+                            <li>
+                                <div class="dropdown">
+                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="Pumps">@localizer["Pumps"]</a>
+                                    <div class="dropdown-content">
+
+                                        <div class="dropdown-submenu">
+                                            @foreach (var item in ViewBag.Categories)
+                                            {
+                                                @if (item.Name_EN == "Pumps")
+                                                {
+                                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_AZ">
+                                                        @item.Subname_AZ
+                                                    </a>
+
+                                                    <div class="dropdown-submenu-content">
+                                                        <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_AZ">@item.SubofSubname_AZ</a>
+                                                    </div>
+
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dropdown">
+                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="Pipes & fittings">@localizer["Pipes_fittings"]</a>
+                                    <div class="dropdown-content">
+
+                                        <div class="dropdown-submenu">
+                                            @foreach (var item in ViewBag.Categories)
+                                            {
+                                                @if (item.Name_AZ == "Pipes & fittings")
+                                                {
+                                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_AZ">
+                                                        @item.Subname_AZ
+                                                    </a>
+
+                                                    <div class="dropdown-submenu-content">
+                                                        <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_AZ">@item.SubofSubname_AZ</a>
+                                                    </div>
+
+                                                }
+                                            }
                                         </div>
                                     </div>
                                 </div>
                             </li>
                             
+                            
+                            <li>
+                                <div class="dropdown">
+                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="Air_conditioning_equipment">@localizer["Air_conditioning_equipment"]</a>
+                                    <div class="dropdown-content">
+
+                                        <div class="dropdown-submenu">
+                                            @foreach (var item in ViewBag.Categories)
+                                            {
+                                                @if (item.Name_AZ == "Air_conditioning_equipment")
+                                                {
+                                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_AZ">
+                                                        @item.Subname_AZ
+                                                    </a>
+
+                                                    <div class="dropdown-submenu-content">
+                                                        <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_AZ">@item.SubofSubname_AZ</a>
+                                                    </div>
+
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dropdown">
+                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="Ventilation">@localizer["Ventilation"]</a>
+                                    <div class="dropdown-content">
+
+                                        <div class="dropdown-submenu">
+                                            @foreach (var item in ViewBag.Categories)
+                                            {
+                                                @if (item.Name_AZ == "Ventilation")
+                                                {
+                                                    <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.Subname_AZ">
+                                                        @item.Subname_AZ
+                                                    </a>
+
+                                                    <div class="dropdown-submenu-content">
+                                                        <a asp-action="GetProductsByCategory" asp-route-categoryname="@item.SubofSubname_AZ">@item.SubofSubname_AZ</a>
+                                                    </div>
+
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
 
                         </ul>
                     </div>
@@ -200,9 +422,9 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+                            <form asp-controller="Home" asp-action="Search"  method="get">
 
-                                <input type="text" placeholder="Axtar">
+                                <input type="text" name="keyword" placeholder="@localizer["Search"]">
                                 <button type="submit" class="site-btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
@@ -266,12 +488,13 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <ul>
-                        <li><a href="#">Who We Are</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Innovation</a></li>
-                        <li><a href="#">Testimonials</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Heaters">@localizer["Heaters"]</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Radiators">@localizer["Radiators"]</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Water heaters">@localizer["Water_heaters"]</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Pumps">@localizer["Pumps"]</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Pipes & fittings">@localizer["Pipes_fittings"]</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Air conditioning equipment">@localizer["Air_conditioning_equipment"]</a></li>
+                        <li><a asp-action="GetProductsByCategory" asp-route-categoryname="Ventilation">@localizer["Ventilation"]</a></li>
                     </ul>
 
                     <a href="#" id="btn-wp"><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i></a>

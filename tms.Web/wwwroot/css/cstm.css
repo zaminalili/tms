@@ -78,3 +78,52 @@ footer a:hover{
   .dropdown a:hover{
     opacity: 0.8;
   }
+
+  
+.img-desc {
+  position: relative;
+}
+
+  .img-desc img {
+      display: block;
+      width: 100%;
+  }
+
+  .img-desc .desc {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff !important; /* arka plan rengini ayarlayın */
+      color: rgba(0, 0, 0, 0.7) !important; /* metin rengini ayarlayın */
+      text-align: center;
+      padding: 10px; /* kenar boşluğunu ayarlayın */
+      box-sizing: border-box;
+      opacity: 0; /* varsayılan olarak gizlenir */
+      transition: opacity 0.2s ease-in-out; /* animasyonu ekleyin */
+  }
+
+  .img-desc:hover .desc {
+      opacity: 0.8;
+  }
+
+.pagination {
+  justify-content: center;
+}
+
+
+.page-link {
+  border-color: #0a5092;
+  background-color: white;
+  color: #0a5092;
+}
+
+  .page-link:hover {
+      background-color: #0a5092;
+      color: white;
+  }
+
+.activ {
+  background-color: #0a5092;
+  color: white;
+}

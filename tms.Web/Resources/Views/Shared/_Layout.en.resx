@@ -123,6 +123,9 @@
   <data name="Adress" xml:space="preserve">
     <value>Ziya Bunyadov, Baku</value>
   </data>
+  <data name="Air_conditioning_equipment" xml:space="preserve">
+    <value>Air Conditioning Equipment</value>
+  </data>
   <data name="Brands" xml:space="preserve">
     <value>Brands</value>
   </data>
@@ -141,7 +144,25 @@
   <data name="Phone" xml:space="preserve">
     <value>Mobile &amp; WhatsApp</value>
   </data>
+  <data name="Pipes_fittings" xml:space="preserve">
+    <value>Pipes &amp; fittings</value>
+  </data>
+  <data name="Pumps" xml:space="preserve">
+    <value>Pumps</value>
+  </data>
+  <data name="Radiators" xml:space="preserve">
+    <value>Radiators</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="Top_String" xml:space="preserve">
     <value>Heating, Cooling and Ventilation systems sales, Engineering report and Service.</value>
+  </data>
+  <data name="Ventilation" xml:space="preserve">
+    <value>Ventilation</value>
+  </data>
+  <data name="Water_heaters" xml:space="preserve">
+    <value>Water heaters</value>
   </data>
 </root>

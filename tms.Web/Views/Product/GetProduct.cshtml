@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
+
+@model Product
+
+<link href="~/css/cstm.css" rel="stylesheet" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/elegant-icons.css" rel="stylesheet" />
+<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/css/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/nice-select.css" rel="stylesheet" />
+<link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+<link href="~/css/slicknav.min.css" rel="stylesheet" />
+
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <img class="product__details__pic__item--large" src="~/@Model.Image.FileName" alt="image">
+                    </div>
+                    <div class="product__details__pic__slider owl-carousel owl-loaded owl-drag">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>@Model.Name</h3>
+
+                    <div class="product__details__price">@Model.Price</div>
+                    <p>
+                        @switch (ViewBag.CurrentLang)
+                        {
+                            case "az":
+                                @Model.About_AZ
+                                break;
+                            case "en":
+                                @Model.About_EN
+                                break;
+                            case "ru":
+                                @Model.About_RU
+                                break;
+                        }
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.nice-select.min.js"></script>
+<script src="~/js/jquery.slicknav.js"></script>
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/jquery-ui.min.js"></script>
+<script src="~/js/main.js"></script>
+<script src="~/js/mixitup.min.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/site.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+<script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+        integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+        data-cf-beacon='{"rayId":"7a6cf3bc8f1f0a33","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.2.0","si":100}'
+        crossorigin="anonymous"></script>

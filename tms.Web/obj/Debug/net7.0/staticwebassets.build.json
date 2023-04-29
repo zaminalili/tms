@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "64XD8wCs7JNherzXDtpBWnKrMJy6WjZ9iYt4Q5N/0wQ=",
+  "Hash": "YYkcsASmXcU2331lW8ShyBdNIJIwHfxAlQenhGPKm3A=",
   "Source": "tms.Web",
   "BasePath": "_content/tms.Web",
   "Mode": "Default",
@@ -6783,12 +6783,12 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\custom.css",
+      "Identity": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\cstm.css",
       "SourceId": "tms.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\",
       "BasePath": "_content/tms.Web",
-      "RelativePath": "css/custom.css",
+      "RelativePath": "css/cstm.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -6797,7 +6797,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\custom.css"
+      "OriginalItemSpec": "wwwroot\\css\\cstm.css"
     },
     {
       "Identity": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\css\\elegant-icons.css",
