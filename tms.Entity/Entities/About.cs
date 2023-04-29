@@ -2,6 +2,8 @@
 {
     public class About: EntityBase
     {
-        public string Description { get; set; }
+        public string Description_AZ { get; set; }
+        public string Description_EN { get; set; }
+        public string Description_RU { get; set; }
     }
 }
