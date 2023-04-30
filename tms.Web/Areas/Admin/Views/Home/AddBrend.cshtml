@@ -1,0 +1,18 @@
+﻿@{
+	ViewData["Title"] = "Yeni brend";
+}
+
+@model BrendDto
+
+<form asp-controller="Home" asp-action="AddBrend" method="post" enctype="multipart/form-data">
+	<div class="input-group mb-3">
+		<input asp-for="Name" placeholder="Brend adı" type="text" class="form-control">
+	</div>
+	<div class="input-group mb-3">
+		<input asp-for="ImageFile" type="file" accept="image/*" class="form-control">
+	</div>
+	
+
+	<button type="submit" class="btn btn-primary">Yadda saxla</button>
+	<a asp-action="GetBrends" class="btn btn-link">Geri</a>
+</form>
