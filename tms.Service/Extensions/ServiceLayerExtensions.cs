@@ -22,6 +22,7 @@ namespace tms.Service.Extensions
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IImageHelper, ImageHelper>();
             services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<IAboutService, AboutService>();
 
             return services;
         }

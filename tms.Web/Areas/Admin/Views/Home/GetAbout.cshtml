@@ -1,0 +1,11 @@
+﻿@model List<About>
+
+@foreach (var item in Model)
+{
+	<div class="card-header">
+		@item.Description_AZ
+	</div>
+	<div class="card-body">
+		<a asp-action="UpdateAbout" asp-route-id="@item.Id">Yenilə</a>
+	</div>
+}

@@ -1,0 +1,17 @@
+﻿@model About
+
+<form asp-controller="Home" asp-action="UpdateAbout" method="post">
+	<div class="input-group mb-3">
+		<input asp-for="Description_AZ" value="@Model.Description_AZ" type="text" class="form-control">
+	</div>
+	<div class="input-group mb-3">
+		<input asp-for="Description_EN" value="@Model.Description_EN" type="text" class="form-control">
+	</div>
+	<div class="input-group mb-3">
+		<input asp-for="Description_RU" value="@Model.Description_RU" type="text" class="form-control">
+	</div>
+
+	<button type="submit" class="btn btn-primary">Yadda saxla</button>
+	<a asp-action="GetAbout" class="btn btn-link">Geri</a>
+</form>
+
