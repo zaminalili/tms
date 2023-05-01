@@ -24,6 +24,7 @@ namespace tms.Service.Extensions
             services.AddScoped<IImageService, ImageService>();
             services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IBrendService, BrendService>();
+            services.AddScoped<IOfferService, OfferService>();
 
 			return services;
         }

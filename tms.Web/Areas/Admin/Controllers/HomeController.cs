@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using tms.Entity.DTOs.BrendDtos;
+using tms.Entity.DTOs.OfferDtos;
 using tms.Entity.Entities;
 using tms.Service.Helpers;
 using tms.Service.Services.Abstract;
@@ -16,12 +17,14 @@ namespace tms.Web.Areas.Admin.Controllers
         private readonly IBrendService brendService;
         private readonly IImageHelper imageHelper;
         private readonly IImageService ımageService;
-		public HomeController(IAboutService aboutService, IBrendService brendService, IImageHelper imageHelper, IImageService ımageService)
+        private readonly IOfferService offerService;
+		public HomeController(IAboutService aboutService, IBrendService brendService, IImageHelper imageHelper, IImageService ımageService, IOfferService offerService)
         {
             this.aboutService = aboutService;
             this.brendService = brendService;
             this.imageHelper = imageHelper;
             this.ımageService = ımageService;
+            this.offerService = offerService;
 
 		}
 
@@ -88,5 +91,50 @@ namespace tms.Web.Areas.Admin.Controllers
 
             return RedirectToAction("GetBrends");
         }
-	}
+
+
+        public async Task<IActionResult> GetOffer()
+        {
+            var offers = await offerService.GetAllOfferAsync();
+
+            return View(offers);
+        }
+
+        public IActionResult AddOffer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddOffer(OfferDto model)
+        {
+            var image = await imageHelper.UploadAsync(model.ImageFile);
+
+            var imageId = await ımageService.AddImageAsync(image);
+
+            var offer = new Offer
+            {
+                Title_AZ = model.Title_AZ,
+                Title_EN = model.Title_EN,
+                Title_RU = model.Title_RU,
+                Description_AZ = model.Description_AZ,
+                Description_EN = model.Description_EN,
+                Description_RU = model.Description_RU,
+                CreatedBy = "Admin",
+                CreatedDate = DateTime.Now,
+                ImageId = imageId,
+            };
+
+            await offerService.AddOfferAsync(offer);
+
+            return RedirectToAction("GetOffer");
+        }
+
+        public async Task<IActionResult> DeleteOffer(Guid id)
+        {
+            await offerService.DeleteOfferAsync(id);
+            return RedirectToAction("GetOffer");
+        }
+
+    }
 }

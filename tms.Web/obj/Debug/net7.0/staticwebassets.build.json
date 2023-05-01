@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xK0HrtewGukld8CMT9uGhTraT6/F8ejVJ3AzkiRN/S8=",
+  "Hash": "pSOrl7pN1ig30XRhnQg4BPnKyRaOpg/FNFc45+TfKE8=",
   "Source": "tms.Web",
   "BasePath": "_content/tms.Web",
   "Mode": "Default",
@@ -7189,6 +7189,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Selenoid gas valve.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\TMS.png",
+      "SourceId": "tms.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\",
+      "BasePath": "_content/tms.Web",
+      "RelativePath": "images/TMS.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\TMS.png"
     },
     {
       "Identity": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\upright check valve.png",

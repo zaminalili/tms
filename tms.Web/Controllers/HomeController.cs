@@ -15,13 +15,19 @@ namespace tms.Web.Controllers
         private readonly IProductService productService;
 		private readonly IHttpContextAccessor httpContextAccessor;
 		private readonly IStringLocalizer<HomeController> localizer;
+        private readonly IAboutService aboutService;
+        private readonly IBrendService brendService;
+        private readonly IOfferService offerService;
 
-		public HomeController(ICategoryService categoryService, IProductService productService, IHttpContextAccessor httpContextAccessor, IStringLocalizer<HomeController> localizer)
+		public HomeController(ICategoryService categoryService, IProductService productService, IHttpContextAccessor httpContextAccessor, IStringLocalizer<HomeController> localizer, IAboutService aboutService, IBrendService brendService, IOfferService offerService)
         {
             this.categoryService = categoryService;
             this.productService = productService;
 			this.httpContextAccessor = httpContextAccessor;
 			this.localizer = localizer;
+            this.aboutService = aboutService;
+            this.brendService = brendService;
+            this.offerService = offerService;
 		}
 
         public async Task<IActionResult> Index(Guid? categoryId, int currentPage = 1, int pageSize = 24, bool isAscending = false)
@@ -50,7 +56,7 @@ namespace tms.Web.Controllers
 
         public IActionResult ChangeLanguage(string culture, string returnUrl)
         {
-            httpContextAccessor.HttpContext.Response.Cookies.Append(
+             httpContextAccessor.HttpContext.Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
@@ -58,5 +64,48 @@ namespace tms.Web.Controllers
 
             return LocalRedirect(returnUrl);
         }
-    }
+
+        public async Task<IActionResult> GetAbout()
+        {
+            ViewBag.IsHomePage = false;
+            ViewBag.Categories = await categoryService.GetAllCategoriesAsync();
+
+            string currentCulture = CultureInfo.CurrentCulture.Name;
+
+            ViewBag.CurrentLang = currentCulture;
+
+            var abouts = await aboutService.GetAboutsAsync();
+
+
+            return View(abouts);
+        }
+
+		public async Task<IActionResult> GetBrends()
+		{
+            ViewBag.IsHomePage = false;
+            ViewBag.Categories = await categoryService.GetAllCategoriesAsync();
+
+            string currentCulture = CultureInfo.CurrentCulture.Name;
+
+            ViewBag.CurrentLang = currentCulture;
+
+			var brends = await brendService.GetAllBrendsAsync();
+
+			return View(brends);
+		}
+
+		public async Task<IActionResult> GetOffer()
+		{
+            ViewBag.IsHomePage = false;
+            ViewBag.Categories = await categoryService.GetAllCategoriesAsync();
+
+            string currentCulture = CultureInfo.CurrentCulture.Name;
+
+            ViewBag.CurrentLang = currentCulture;
+
+            var offers = await offerService.GetAllOfferAsync();
+
+			return View(offers);
+		}
+	}
 }

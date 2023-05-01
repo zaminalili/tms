@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Yeni kampaniya";
+}
+
+@model OfferDto
+
+
+<div>
+    <form asp-action="AddOffer" method="post" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+            <input asp-for="Title_AZ" type="text" class="form-control" placeholder="Başlıq azərbaycanca">
+        </div>
+        <div class="input-group mb-3">
+            <input asp-for="Title_EN" type="text" class="form-control" placeholder="Başlıq ingiliscə">
+        </div>
+        <div class="input-group mb-3">
+            <input asp-for="Title_RU" type="text" class="form-control" placeholder="Başlıq rusca">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <input asp-for="Description_AZ" type="text" class="form-control" placeholder="Açıqlama azərbaycanca">
+        </div>
+        <div class="input-group mb-3">
+            <input asp-for="Description_EN" type="text" class="form-control" placeholder="Açıqlama ingiliscə">
+        </div>
+        <div class="input-group mb-3">
+            <input asp-for="Description_RU" type="text" class="form-control" placeholder="Açıqlama rusca">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <input asp-for="ImageFile" type="file" class="form-control" placeholder="Kampaniya şəkli">
+        </div>
+
+        <button type="submit" class="btn btn-priamry">Əlavə et</button>
+    </form>
+
+   
+</div>

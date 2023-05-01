@@ -14,7 +14,7 @@ namespace tms.Service.Services.Concrete
 
         public async Task<List<About>> GetAboutsAsync()
         {
-            return await unitOfWork.GetRepository<About>().GetAllAsync();
+            return await unitOfWork.GetRepository<About>().GetAllAsync(a => !a.IsDeleted);
         }
 
         public async Task<About> GetAboutAsync(Guid id)

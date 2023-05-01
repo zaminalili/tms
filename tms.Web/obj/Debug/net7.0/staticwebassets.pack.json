@@ -1657,6 +1657,10 @@
       "PackagePath": "staticwebassets\\images\\Selenoid gas valve.png"
     },
     {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\TMS.png",
+      "PackagePath": "staticwebassets\\images\\TMS.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\tms\\tms.Web\\wwwroot\\images\\ball valve female.png",
       "PackagePath": "staticwebassets\\images\\ball valve female.png"
     },

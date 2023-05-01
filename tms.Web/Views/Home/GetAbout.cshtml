@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
+@model List<About>
+<link href="~/css/cstm.css" rel="stylesheet" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/elegant-icons.css" rel="stylesheet" />
+<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/css/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/nice-select.css" rel="stylesheet" />
+<link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+<link href="~/css/slicknav.min.css" rel="stylesheet" />
+
+<section class="d-flex justify-content-center">
+    <div class="blog__details__text">
+        <h3>Şirkət haqqında</h3>
+        <p class="text-center">Lorem ipsum</p>
+    </div>
+</section>
+
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_phone"></span>
+                    <h4>Phone</h4>
+                    <p>+01-3-8888-6868</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_pin_alt"></span>
+                    <h4>Address</h4>
+                    <p>60-49 Road 11378 New York</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_clock_alt"></span>
+                    <h4>Open time</h4>
+                    <p>10:00 am to 23:00 pm</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_mail_alt"></span>
+                    <h4>Email</h4>
+                    <p>hello@colorlib.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.nice-select.min.js"></script>
+<script src="~/js/jquery.slicknav.js"></script>
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/jquery-ui.min.js"></script>
+<script src="~/js/main.js"></script>
+<script src="~/js/mixitup.min.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/site.js"></script>
